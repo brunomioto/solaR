@@ -10,24 +10,19 @@ The goal of solaR is to …
 
 ## Installation
 
-You can install the development version of solarcalc from
+You can install the development version of solaR from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("brunomioto/solaR")
+# install.packages("remotes")
+remotes::install_github("brunomioto/solaR")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
-#library(solaR)
-## basic example code
-```
+library(solaR)
 
-``` r
 get_irradiance()
 #> # A tibble: 108 x 3
 #>    nm    category         value
