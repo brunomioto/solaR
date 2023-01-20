@@ -110,6 +110,7 @@ get_irradiance <- function(year = "2023",
                     category = stringr::str_extract(title, "(?<=\\snm\\s)[:alpha:]+"),
                     value = stringr::str_extract(title, "[:digit:]\\.[:digit:]{3,}(?=\\sW\\/m2\\/nm)")) %>%
       dplyr::select(-c(coords, title)) %>%
-      dplyr::filter(!is.na(nm))
+      dplyr::filter(!is.na(nm)) %>%
+      dplyr::arrange(nm)
 
   }
