@@ -23,19 +23,20 @@ remotes::install_github("brunomioto/solaR")
 ``` r
 library(solaR)
 
+#default values
 get_irradiance()
-#> # A tibble: 108 x 3
+#> # A tibble: 164 x 3
 #>       nm category         value
 #>    <dbl> <chr>            <dbl>
-#>  1   300 Global           0.008
-#>  2   300 Diffuse          0.004
-#>  3   300 Direct           0.004
-#>  4   300 Extraterrestrial 0.525
-#>  5   310 Global           0.142
-#>  6   310 Diffuse          0.067
-#>  7   310 Direct           0.075
-#>  8   310 Extraterrestrial 0.645
-#>  9   320 Global           0.332
-#> 10   320 Diffuse          0.145
-#> # ... with 98 more rows
+#>  1   350 Global           0.708
+#>  2   350 Diffuse          0.243
+#>  3   350 Direct           0.465
+#>  4   350 Extraterrestrial 0.994
+#>  5   360 Global           0.725
+#>  6   360 Diffuse          0.23 
+#>  7   360 Direct           0.494
+#>  8   360 Extraterrestrial 0.977
+#>  9   370 Global           0.883
+#> 10   370 Diffuse          0.261
+#> # ... with 154 more rows
 ```

@@ -21,6 +21,7 @@ devtools::load_all()
 
 The goal of solaR is to ...
 
+
 ## Installation
 
 You can install the development version of solaR from [GitHub](https://github.com/) with:

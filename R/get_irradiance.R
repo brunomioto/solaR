@@ -18,8 +18,8 @@ get_irradiance <- function(year = "2023",
                              day = "1",
                              lat = "-34.2833",
                              lon = "150.95",
-                             min_wavelength = "300",
-                             max_wavelength = "560",
+                             min_wavelength = "350",
+                             max_wavelength = "750",
                              wavelength_interval = "10") {
 
     #url
