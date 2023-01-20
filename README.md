@@ -25,17 +25,17 @@ library(solaR)
 
 get_irradiance()
 #> # A tibble: 108 x 3
-#>    nm    category         value
-#>    <chr> <chr>            <chr>
-#>  1 300.0 Global           0.008
-#>  2 300.0 Diffuse          0.004
-#>  3 300.0 Direct           0.004
-#>  4 300.0 Extraterrestrial 0.525
-#>  5 310.0 Global           0.142
-#>  6 310.0 Diffuse          0.067
-#>  7 310.0 Direct           0.075
-#>  8 310.0 Extraterrestrial 0.645
-#>  9 320.0 Global           0.332
-#> 10 320.0 Diffuse          0.145
+#>       nm category         value
+#>    <dbl> <chr>            <dbl>
+#>  1   300 Global           0.008
+#>  2   300 Diffuse          0.004
+#>  3   300 Direct           0.004
+#>  4   300 Extraterrestrial 0.525
+#>  5   310 Global           0.142
+#>  6   310 Diffuse          0.067
+#>  7   310 Direct           0.075
+#>  8   310 Extraterrestrial 0.645
+#>  9   320 Global           0.332
+#> 10   320 Diffuse          0.145
 #> # ... with 98 more rows
 ```

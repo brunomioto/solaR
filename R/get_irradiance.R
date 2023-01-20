@@ -40,7 +40,7 @@ get_irradiance <- function(year = "2023",
       xml2::xml_find_first("//input[@id='__EVENTVALIDATION']") |>
       xml2::xml_attr("value")
 
-    # Declarar parÃ¢metros
+    # Declarar parametros
     params <- list(
       "smMain" = "TabContainer1$TabPanel1$UpdatePanel1|TabContainer1$TabPanel1$tbDay",
       "TabContainer1_ClientState" = "{\"ActiveTabIndex\":0,\"TabEnabledState\":[true,true,true,true],\"TabWasLoadedOnceState\":[true,false,false,false]}",
@@ -91,7 +91,7 @@ get_irradiance <- function(year = "2023",
       "__ASYNCPOST" = "false"
     )
 
-    # Pegar o conteÃºdo da resposta
+    # Pegar o conteudo da resposta
     cont <- url %>%
       httr::POST(body = params, encode = "form") %>%
       httr::content()
@@ -105,12 +105,14 @@ get_irradiance <- function(year = "2023",
       purrr::map(purrr::flatten_chr) %>%
       dplyr::as_tibble()
 
-    tabela %>%
-      dplyr::mutate(nm = stringr::str_extract(title, "(?<=WL\\s\\=\\s)[:digit:]{3,}\\.[:digit:]"),
+    tabela2 <- tabela %>%
+      dplyr::mutate(nm = as.numeric(stringr::str_extract(title, "(?<=WL\\s\\=\\s)[:digit:]{3,}\\.[:digit:]")),
                     category = stringr::str_extract(title, "(?<=\\snm\\s)[:alpha:]+"),
-                    value = stringr::str_extract(title, "[:digit:]\\.[:digit:]{3,}(?=\\sW\\/m2\\/nm)")) %>%
+                    value = as.numeric(stringr::str_extract(title, "[:digit:]\\.[:digit:]{3,}(?=\\sW\\/m2\\/nm)"))) %>%
       dplyr::select(-c(coords, title)) %>%
       dplyr::filter(!is.na(nm)) %>%
       dplyr::arrange(nm)
+
+    return(tabela2)
 
   }

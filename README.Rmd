@@ -35,6 +35,7 @@ remotes::install_github("brunomioto/solaR")
 ```{r example}
 library(solaR)
 
+#default values
 get_irradiance()
 ```
 
